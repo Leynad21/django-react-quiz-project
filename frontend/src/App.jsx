@@ -1,12 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import QuizHomePage from './pages/QuizHomePage'
+import NavBar from './components/Navbar'
+
 
 function App() {
 
   return (
     <>
-      <h1 className=' text-5xl text-red-700 text-center mt-8'>React Quiz Master</h1>
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<QuizHomePage />} />
+        </Routes>
+      </Router>
     </>
   )
 }
